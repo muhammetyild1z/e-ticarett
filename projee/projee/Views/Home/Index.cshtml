@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="opacity:0.5">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Doğuş Ticaret</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                
+
+                @if (User.IsInRole("admin") || User.IsInRole("per"))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stok işlemleri</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="/Stoks/Create">Yeni stok gir</a>
+                            <a class="dropdown-item" href="/Stoks/Index">Stok Listele</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cari işlemleri</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="/Carilers/Index">Cari listele</a>
+                            <a class="dropdown-item" href="/Carilers/Create">Yeni cari gir</a>
+                        </div>
+                    </li>
+
+
+
+                }
+                @if (User.IsInRole("admin"))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kullanıcı işlemleri</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="/Kullanicilars/Create">Yeni kullanıcı ekle</a>
+                            <a class="dropdown-item" href="/Kullanicilars/Index">Kullanıcıları listele</a>
+                        </div>
+                    </li>
+                }@if (User.IsInRole("admin") || User.IsInRole("per"))
+                {
+                    <li class="nav-item active"><a href="/Kullanicilars/Logout" class="nav-link">Çıkış yap</a></li>
+                }
+
+                
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="hero-wrap js-fullheight">
+    <div class="overlay"></div>
+    <div id="particles-js"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CariModelStoreContainer" CdmEntityContainer="CariEntities">
+    <EntitySetMapping Name="card">
+      <EntityTypeMapping TypeName="CariModel.card">
+        <MappingFragment StoreEntitySet="card">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ekle" ColumnName="ekle" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cariler">
+      <EntityTypeMapping TypeName="CariModel.Cariler">
+        <MappingFragment StoreEntitySet="Cariler">
+          <ScalarProperty Name="Carid" ColumnName="Carid" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="Carikod" ColumnName="Carikod" />
+          <ScalarProperty Name="Cariad" ColumnName="Cariad" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Vergikimlik" ColumnName="Vergikimlik" />
+          <ScalarProperty Name="Silindimi" ColumnName="Silindimi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilar">
+      <EntityTypeMapping TypeName="CariModel.Kullanicilar">
+        <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+          <ScalarProperty Name="Ad_soyad" ColumnName="Ad_soyad" />
+          <ScalarProperty Name="kullanıcı_adi" ColumnName="kullanıcı_adi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Silindimi" ColumnName="Silindimi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musteri">
+      <EntityTypeMapping TypeName="CariModel.Musteri">
+        <MappingFragment StoreEntitySet="Musteri">
+          <ScalarProperty Name="Mdate" ColumnName="Mdate" />
+          <ScalarProperty Name="Musteri_adi" ColumnName="Musteri_adi" />
+          <ScalarProperty Name="Musteri_sifresi" ColumnName="Musteri_sifresi" />
+          <ScalarProperty Name="Musteri_eposta" ColumnName="Musteri_eposta" />
+          <ScalarProperty Name="Musteri_id" ColumnName="Musteri_id" />
+          <ScalarProperty Name="yetki" ColumnName="yetki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stok">
+      <EntityTypeMapping TypeName="CariModel.Stok">
+        <MappingFragment StoreEntitySet="Stok">
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Resim" ColumnName="Resim" />
+          <ScalarProperty Name="Silindimi" ColumnName="Silindimi" />
+          <ScalarProperty Name="Stokadi" ColumnName="Stokadi" />
+          <ScalarProperty Name="Stokkodu" ColumnName="Stokkodu" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="Stokid" ColumnName="Stokid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sepet">
+      <EntityTypeMapping TypeName="CariModel.Sepet">
+        <MappingFragment StoreEntitySet="Sepet">
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="MUS_ID" ColumnName="MUS_ID" />
+          <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+          <ScalarProperty Name="BR_FYT" ColumnName="BR_FYT" />
+          <ScalarProperty Name="MIKTAR" ColumnName="MIKTAR" />
+          <ScalarProperty Name="STO_ID" ColumnName="STO_ID" />
+          <ScalarProperty Name="SPT_ID" ColumnName="SPT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

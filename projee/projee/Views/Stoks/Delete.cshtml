@@ -1,0 +1,60 @@
+﻿@model projee.Models.Stok
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="        text-align: center;
+        color: #ee768fbd">
+    Stok silme
+</h2>
+
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ; "> Cari Kayıt tarihi</h6>
+        </dt>
+
+        <dd style="margin-left:30px"> 
+            @Html.DisplayFor(model => model.CDate)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ; ">Stok kodu</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.Stokkodu)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ; ">Stok adı</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.Stokadi)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ; ">Silindi mi?</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.Silindimi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style=" margin-left:40px;margin-top:20px;margin-bottom:20px">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri dön", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,67 @@
+﻿@model projee.Models.Kullanicilar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="        text-align: center; color: #ee768fbd">Kullanıcı detayı</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Kayıt tarihi</h6>
+        </dt>
+
+        <dd style="margin-left:15px">
+            @Html.DisplayFor(model => model.Cdate)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Ad soyad</h6>
+        </dt>
+
+        <dd style="margin-left:15px">
+            @Html.DisplayFor(model => model.Ad_soyad)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Kullanıcı adı</h6>
+        </dt>
+
+        <dd style="margin-left:15px">
+            @Html.DisplayFor(model => model.kullanıcı_adi)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Şifre</h6>
+        </dt>
+
+        <dd style="margin-left:15px">
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Rol</h6>
+        </dt>
+
+        <dd style="margin-left:15px">
+            @Html.DisplayFor(model => model.Rol)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Silindi mi?</h6>
+        </dt>
+
+        <dd style="margin-left:15px">
+            @Html.DisplayFor(model => model.Silindimi)
+        </dd>
+
+    </dl>
+</div><hr />
+<p style="margin-left:40px;margin-top:20px">
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Geri dön", "Index")
+</p>

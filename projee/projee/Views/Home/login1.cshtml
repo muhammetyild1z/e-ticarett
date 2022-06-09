@@ -1,0 +1,47 @@
+﻿ @model projee.Models.Musteri
+@{
+    ViewBag.Title = "login1";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<section id="form">
+    <!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="login-form">
+                    <!--login form-->
+                    <h2>Giriş yap</h2>
+                    <form action="/Home/login1" method="post">
+                        <input type="text" placeholder="Kullanıcı adı" name="Musteri_adi" />
+                        <input type="password" placeholder="Şifre" name="Musteri_sifresi"/>
+                        <span>
+                            <input type="checkbox" class="checkbox">
+                            Beni hatırla
+                        </span>
+                        <button type="submit" class="btn btn-default">Giriş yap</button>
+                        @ViewBag.hata1
+                    </form>
+                </div><!--/login form-->
+            </div>
+            <div class="col-sm-1">
+                <h2 class="or">Veya</h2>
+            </div>
+            <div class="col-sm-4">
+                <div class="signup-form">
+                    <!--sign up form-->
+                    <h2>Üye ol!</h2>
+                    <form action="/Home/register" method="post">
+                        <input type="text" placeholder="Ad" name="ad" required />
+                        <input type="email" placeholder="e-posta" name="mail" required />
+                        <input type="password" placeholder="Şifre" name="sifre" required />
+                        <input type="password" placeholder="Şifre tekrar" name="sifre1" required />
+                        <a>  <button type="submit" class="btn btn-default">Kayıt ol</button></a>
+
+                    </form> @ViewBag.sifre
+                    @ViewBag.hata
+
+                </div><!--/sign up form-->
+            </div>
+        </div>
+    </div>
+</section><!--/form-->

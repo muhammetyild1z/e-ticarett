@@ -1,0 +1,80 @@
+﻿@model projee.Models.Cariler
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h2 style="text-align: center;color: #ee768fbd">Cari silme</h2><hr />
+<div style="margin-top:50px">
+    
+    
+    <dl class="dl-horizontal">
+        @*<dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Cari kayıt tarihi</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.CDate)
+        </dd>*@
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Cari kod</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.Carikod)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Cari ad</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.Cariad)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Cari adres</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Telefon</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Vergi kimlik</h6>
+        </dt>
+
+        <dd style="margin-left:30px">
+            @Html.DisplayFor(model => model.Vergikimlik)
+        </dd>
+
+        <dt>
+            <h6 style="margin-left:25px;color: #ee768fbd ">Silindi mi?</h6>
+        </dt>
+
+        <dd style="margin-left:30px"> 
+            @Html.DisplayFor(model => model.Silindimi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style=" margin-left:40px;margin-top:20px;margin-bottom:20px">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri dön", "Index")
+        </div>
+    }
+</div>

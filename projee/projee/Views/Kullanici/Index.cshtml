@@ -1,0 +1,205 @@
+﻿@model IEnumerable<projee.Models.Sepet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<title>Anasayfa | E-Satış</title>
+<section id="slider">
+    <!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        <li data-target="#slider-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner" style="margin-left:30px">
+                        <div class="item active">
+                            <div class="col-sm-6">
+                                <h1>DOĞUŞ E-TİCARET</h1>
+                                <h2>Büyük bayram indirimleri</h2>
+                                <p>Bayram boyunca tüm ürünlerde %70'e varan indirimler 17 haziranda başlıyor. </p>
+                                @*<button type="button" class="btn btn-default get">Get it now</button>*@
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="~/a/eshopper/images/home/girl1.jpg" class="girl img-responsive" alt="" />
+                                <img src="~/a/eshopper/images/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>Mutlu hafta sonları</span></h1>
+
+                                <p>Hafta sonuna özel %30'a varan indirimler için </p>
+                                <button type="button" class="btn btn-default get">Tıklayın</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="~/a/eshopper/images/home/girl2.jpg" class="girl img-responsive" alt="" />
+                                <img src="~/a/eshopper/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>Her bütçeye uygun tatil paketleri</span></h1></br>
+
+                                <p>10 aya varan taksit seçenekleri ile </p>
+                                <button type="button" class="btn btn-default get">Tıklayın</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="~/a/eshopper/images/home/girl3.jpg" class="girl img-responsive" alt="" />
+                                <img src="~/a/eshopper/images/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+
+                    <div class="panel-group category-products" id="accordian">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9 padding-right">
+
+    </div>
+
+    <div class="recommended_items">
+        <!--recommended_items-->
+        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+
+            <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="features_items"  id="urunler">
+        <!--features_items-->
+        <h2 class="title text-center">Features Items</h2>
+             
+        
+    <!--features_items-->
+</div>
+
+</section>
+<script src="~/snipp/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        urunler();
+    })
+    function urunler() {
+        $.ajax({
+            url: '/Urunler/Stok_List',
+            dataType: 'json',
+            type: 'POST',
+            cache: false,
+            data: JSON.stringify({
+               
+
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    html += '<div class="col-sm-4" style="float:left">\
+            <div class="product-image-wrapper" style="width:400px; margin-left:90px" >\
+                <div class="single-products">\
+                    <div class="productinfo text-center" >\
+                        <img src="../a/eshopper/images/home/'+data[i].Resim+'" alt="" style="width:100px"/>\
+                        <h2>' + data[i].Fiyat +' TL</h2>\
+                        <p>'+ data[i].Stokkodu + ' </br>'  + ' </p>\
+                        <a href="#" urunid="'+ data[i].Stokid + '" fiyat="' + data[i].Fiyat +'" class="btn btn-default add-to-cart spt_btn"><i class="fa fa-shopping-cart"></i>Sepete ekle</a>\
+                    </div>\
+                </div>\
+            </div>\
+        </div> ';
+                   
+                }
+                $("#urunler").html(html);
+            },
+            complete: function () {
+
+                $('#preloader').remove();
+            }
+        }).done(function () {
+
+            $(".spt_btn").click(function () {
+                var fiyat = parseFloat($(this).attr("fiyat")) || 0.0;
+                var stokid = parseInt($(this).attr("urunid")) || 0;
+                var toplam = parseFloat($(this).attr("toplam")) || 0.0;
+                var sepet = {};
+                sepet.STO_ID = stokid;
+                sepet.BR_FYT = fiyat;
+                sepet.MIKTAR = 1;
+                sepet.TOPLAM = toplam;
+
+
+                $.ajax({
+                    url: '/Sepet/Sepeteekle',
+                    dataType: 'json',
+                    type: 'POST',
+                    cache: false,
+                    data: JSON.stringify({
+                        sepet: sepet
+
+                    }),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data)
+                    {
+                        if (data == "OK")
+                        {
+                            alert("Sepete Eklendi");
+                        }
+                    },
+                    complete: function () {
+
+                        
+                    }
+                });
+
+            });
+
+        });
+    }
+  
+</script>
+<style>
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        position: relative;
+        min-height: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+</style>
+
+
+

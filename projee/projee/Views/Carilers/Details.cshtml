@@ -1,0 +1,74 @@
+﻿@model projee.Models.Cariler
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sistede kayıtlı Cariler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carikod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carikod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cariad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cariad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vergikimlik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vergikimlik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Silindimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Silindimi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Carid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

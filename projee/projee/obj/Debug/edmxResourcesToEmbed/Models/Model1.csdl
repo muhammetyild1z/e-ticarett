@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CariModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="card">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ekle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="fiyat" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Cariler">
+    <Key>
+      <PropertyRef Name="Carid" />
+    </Key>
+    <Property Name="Carid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDate" Type="DateTime" Precision="3" />
+    <Property Name="Carikod" Type="Int32" />
+    <Property Name="Cariad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="Int32" />
+    <Property Name="Vergikimlik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Silindimi" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cdate" Type="DateTime" Precision="3" />
+    <Property Name="Ad_soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullanıcı_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rol" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Silindimi" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Musteri">
+    <Key>
+      <PropertyRef Name="Musteri_id" />
+    </Key>
+    <Property Name="Mdate" Type="DateTime" Precision="3" />
+    <Property Name="Musteri_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Musteri_sifresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Musteri_eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Musteri_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CariEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="card" EntityType="Self.card" />
+    <EntitySet Name="Cariler" EntityType="Self.Cariler" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+    <EntitySet Name="Musteri" EntityType="Self.Musteri" />
+    <EntitySet Name="Stok" EntityType="CariModel.Stok" />
+    <EntitySet Name="Sepet" EntityType="CariModel.Sepet" />
+  </EntityContainer>
+  <EntityType Name="Stok">
+    <Key>
+      <PropertyRef Name="Stokid" />
+    </Key>
+    <Property Name="Stokid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDate" Type="DateTime" Precision="3" />
+    <Property Name="Stokkodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Stokadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Silindimi" Type="Int32" />
+    <Property Name="Resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Sepet">
+    <Key>
+      <PropertyRef Name="SPT_ID" />
+    </Key>
+    <Property Name="SPT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STO_ID" Type="Int32" />
+    <Property Name="MIKTAR" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BR_FYT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TOPLAM" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MUS_ID" Type="Int32" />
+    <Property Name="CDate" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

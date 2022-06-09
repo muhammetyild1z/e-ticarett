@@ -1,0 +1,26 @@
+﻿@model projee.Models.Kullanicilar
+@{
+    ViewBag.Title = "login1";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<section id="form">
+    <!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="login-form">
+                    <form action="/Home/login" method="post">
+                        <input type="text" placeholder="Kullanıcı adı" name="Kullanıcı_adi" />
+                        <input type="password" placeholder="Şifre" name="Sifre" />
+                        @*<span>
+                                <input type="checkbox" class="checkbox">
+                                Keep me signed in
+                            </span>*@
+                        <button type="submit" class="btn btn-default">Giriş yap</button>
+                        @ViewBag.hata
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

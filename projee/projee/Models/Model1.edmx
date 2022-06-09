@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CariModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="card">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ekle" Type="nvarchar" MaxLength="50" />
+          <Property Name="image" Type="nvarchar" MaxLength="250" />
+          <Property Name="fiyat" Type="int" />
+        </EntityType>
+        <EntityType Name="Cariler">
+          <Key>
+            <PropertyRef Name="Carid" />
+          </Key>
+          <Property Name="Carid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CDate" Type="datetime" />
+          <Property Name="Carikod" Type="int" />
+          <Property Name="Cariad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="150" />
+          <Property Name="Telefon" Type="int" />
+          <Property Name="Vergikimlik" Type="nvarchar" MaxLength="50" />
+          <Property Name="Silindimi" Type="int" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cdate" Type="datetime" />
+          <Property Name="Ad_soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="kullanıcı_adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rol" Type="nvarchar" MaxLength="5" />
+          <Property Name="Silindimi" Type="int" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="Musteri_id" />
+          </Key>
+          <Property Name="Mdate" Type="datetime" />
+          <Property Name="Musteri_adi" Type="varchar" MaxLength="50" />
+          <Property Name="Musteri_sifresi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Musteri_eposta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Musteri_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="yetki" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sepet">
+          <Key>
+            <PropertyRef Name="SPT_ID" />
+          </Key>
+          <Property Name="SPT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STO_ID" Type="int" />
+          <Property Name="MIKTAR" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="BR_FYT" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TOPLAM" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MUS_ID" Type="int" />
+          <Property Name="CDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Stok">
+          <Key>
+            <PropertyRef Name="Stokid" />
+          </Key>
+          <Property Name="Stokid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CDate" Type="datetime" />
+          <Property Name="Stokkodu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Stokadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Silindimi" Type="int" />
+          <Property Name="Resim" Type="text" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="CariModelStoreContainer">
+          <EntitySet Name="card" EntityType="Self.card" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cariler" EntityType="Self.Cariler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sepet" EntityType="Self.Sepet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stok" EntityType="Self.Stok" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CariModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="card">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ekle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="fiyat" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Cariler">
+          <Key>
+            <PropertyRef Name="Carid" />
+          </Key>
+          <Property Name="Carid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CDate" Type="DateTime" Precision="3" />
+          <Property Name="Carikod" Type="Int32" />
+          <Property Name="Cariad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" />
+          <Property Name="Vergikimlik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Silindimi" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cdate" Type="DateTime" Precision="3" />
+          <Property Name="Ad_soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kullanıcı_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Silindimi" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="Musteri_id" />
+          </Key>
+          <Property Name="Mdate" Type="DateTime" Precision="3" />
+          <Property Name="Musteri_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Musteri_sifresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Musteri_eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Musteri_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CariEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="card" EntityType="Self.card" />
+          <EntitySet Name="Cariler" EntityType="Self.Cariler" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" />
+          <EntitySet Name="Stok" EntityType="CariModel.Stok" />
+          <EntitySet Name="Sepet" EntityType="CariModel.Sepet" />
+        </EntityContainer>
+        <EntityType Name="Stok">
+          <Key>
+            <PropertyRef Name="Stokid" />
+          </Key>
+          <Property Name="Stokid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CDate" Type="DateTime" Precision="3" />
+          <Property Name="Stokkodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Stokadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Silindimi" Type="Int32" />
+          <Property Name="Resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Sepet">
+          <Key>
+            <PropertyRef Name="SPT_ID" />
+          </Key>
+          <Property Name="SPT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STO_ID" Type="Int32" />
+          <Property Name="MIKTAR" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="BR_FYT" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TOPLAM" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MUS_ID" Type="Int32" />
+          <Property Name="CDate" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CariModelStoreContainer" CdmEntityContainer="CariEntities">
+          <EntitySetMapping Name="card">
+            <EntityTypeMapping TypeName="CariModel.card">
+              <MappingFragment StoreEntitySet="card">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ekle" ColumnName="ekle" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cariler">
+            <EntityTypeMapping TypeName="CariModel.Cariler">
+              <MappingFragment StoreEntitySet="Cariler">
+                <ScalarProperty Name="Carid" ColumnName="Carid" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Carikod" ColumnName="Carikod" />
+                <ScalarProperty Name="Cariad" ColumnName="Cariad" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Vergikimlik" ColumnName="Vergikimlik" />
+                <ScalarProperty Name="Silindimi" ColumnName="Silindimi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanicilar">
+            <EntityTypeMapping TypeName="CariModel.Kullanicilar">
+              <MappingFragment StoreEntitySet="Kullanicilar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+                <ScalarProperty Name="Ad_soyad" ColumnName="Ad_soyad" />
+                <ScalarProperty Name="kullanıcı_adi" ColumnName="kullanıcı_adi" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Silindimi" ColumnName="Silindimi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteri">
+            <EntityTypeMapping TypeName="CariModel.Musteri">
+              <MappingFragment StoreEntitySet="Musteri">
+                <ScalarProperty Name="Mdate" ColumnName="Mdate" />
+                <ScalarProperty Name="Musteri_adi" ColumnName="Musteri_adi" />
+                <ScalarProperty Name="Musteri_sifresi" ColumnName="Musteri_sifresi" />
+                <ScalarProperty Name="Musteri_eposta" ColumnName="Musteri_eposta" />
+                <ScalarProperty Name="Musteri_id" ColumnName="Musteri_id" />
+                <ScalarProperty Name="yetki" ColumnName="yetki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stok">
+            <EntityTypeMapping TypeName="CariModel.Stok">
+              <MappingFragment StoreEntitySet="Stok">
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="Silindimi" ColumnName="Silindimi" />
+                <ScalarProperty Name="Stokadi" ColumnName="Stokadi" />
+                <ScalarProperty Name="Stokkodu" ColumnName="Stokkodu" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Stokid" ColumnName="Stokid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sepet">
+            <EntityTypeMapping TypeName="CariModel.Sepet">
+              <MappingFragment StoreEntitySet="Sepet">
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="MUS_ID" ColumnName="MUS_ID" />
+                <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+                <ScalarProperty Name="BR_FYT" ColumnName="BR_FYT" />
+                <ScalarProperty Name="MIKTAR" ColumnName="MIKTAR" />
+                <ScalarProperty Name="STO_ID" ColumnName="STO_ID" />
+                <ScalarProperty Name="SPT_ID" ColumnName="SPT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

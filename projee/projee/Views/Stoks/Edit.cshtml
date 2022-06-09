@@ -1,0 +1,54 @@
+﻿@model projee.Models.Stok
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2 style=" margin-left: 450px;  color: #ee768fbd">Stok düzenleme</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Stokid)
+
+        
+        </div>
+
+        <div class="form-group">
+            <h6 style="margin-left:20px;color: #ee768fbd" ">Stok kodu</h6>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Stokkodu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Stokkodu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h6 style="margin-left:20px;color: #ee768fbd" ">Stok adı</h6>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Stokadi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Stokadi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h6 style="margin-left:20px;color: #ee768fbd" ">Silindi mi?</h6>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Silindimi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Silindimi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-default" />
+            </div>
+        </div>
+    
+
+
+<div>
+    @Html.ActionLink("Geri dön", "Index")
+</div>

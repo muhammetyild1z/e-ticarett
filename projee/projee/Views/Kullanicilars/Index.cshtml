@@ -1,0 +1,66 @@
+﻿@model IEnumerable<projee.Models.Kullanicilar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="font-size:35px;text-align:center;color: #ee768fbd" ">Sisteme kayıtlı kullanıcılar</h2>
+<div style="height:50px"></div>
+<p>
+    <a href="/Kullanicilars/Create"> <input type="submit" name="name" value="Yeni kullanıcı oluştur" class="btn-outline-success" /></a>
+</p>
+<div style="height:20px"></div>
+<table class="table">
+    <tr>
+        <th>
+           Kayıt tarihi
+        </th>
+        <th>
+           Ad soyad
+        </th>
+        <th>
+            Kullanıcı adı
+        </th>
+        <th>
+          Şifre
+        </th>
+        <th>
+           Rol
+        </th>
+        <th>
+           Silindi mi?
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad_soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kullanıcı_adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sifre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Silindimi)
+            </td>
+            <td>
+                <a href="/Kullanicilars/Edit/@item.ID"><button type="submit" class="btn btn-primary btn-lg" name="buton">Düzenle</button></a>
+                <a href="/Kullanicilars/Details/@item.ID"><button type="submit" class="btn btn-primary btn-lg" name="buton">Detay</button></a>
+                <a href="/Kullanicilars/Delete/@item.ID"><button type="submit" class="btn btn-primary btn-lg" name="buton">Sil</button></a>
+            </td>
+        </tr>
+    }
+
+</table>

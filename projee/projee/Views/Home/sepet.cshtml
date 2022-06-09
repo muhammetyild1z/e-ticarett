@@ -1,0 +1,60 @@
+﻿@model IEnumerable<projee.Models.Sepet>
+
+@{
+    ViewBag.Title = "sepet";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>sepet</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.STO_İD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MIKTAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_FYT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOPLAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MUS_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.STO_İD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MIKTAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BR_FYT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOPLAM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MUS_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CDate)
+        </td>
+        
+    </tr>
+}
+
+</table>

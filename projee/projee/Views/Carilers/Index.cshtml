@@ -1,0 +1,69 @@
+﻿@model IEnumerable<projee.Models.Cariler>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="font-size:35px;text-align:center;color: #ee768fbd" ">Sisteme kayıtlı cariler</h2>
+
+<p>
+    <a href="/Kullanicilars/Create"> <input type="submit" name="name" value="Yeni cari oluştur" class="btn-outline-success" style="margin-top:30px" /></a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carikod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cariad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vergikimlik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Silindimi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carikod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cariad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vergikimlik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Silindimi)
+        </td>
+        <td>
+            <a href="/Carilers/Edit/@item.Carid"><button type="submit" class="btn btn-primary btn-lg" name="buton">Düzenle</button></a>
+            <a href="/Carilers/Details/@item.Carid"><button type="submit" class="btn btn-primary btn-lg" name="buton">Detay</button></a>
+            <a href="/Carilers/Delete/@item.Carid"><button type="submit" class="btn btn-primary btn-lg" name="buton">Sil</button></a>
+        </td>
+    </tr>
+}
+
+</table>

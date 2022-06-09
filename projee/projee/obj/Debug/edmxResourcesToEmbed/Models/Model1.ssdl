@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CariModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="card">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ekle" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="nvarchar" MaxLength="250" />
+    <Property Name="fiyat" Type="int" />
+  </EntityType>
+  <EntityType Name="Cariler">
+    <Key>
+      <PropertyRef Name="Carid" />
+    </Key>
+    <Property Name="Carid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CDate" Type="datetime" />
+    <Property Name="Carikod" Type="int" />
+    <Property Name="Cariad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="150" />
+    <Property Name="Telefon" Type="int" />
+    <Property Name="Vergikimlik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Silindimi" Type="int" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cdate" Type="datetime" />
+    <Property Name="Ad_soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanıcı_adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rol" Type="nvarchar" MaxLength="5" />
+    <Property Name="Silindimi" Type="int" />
+  </EntityType>
+  <EntityType Name="Musteri">
+    <Key>
+      <PropertyRef Name="Musteri_id" />
+    </Key>
+    <Property Name="Mdate" Type="datetime" />
+    <Property Name="Musteri_adi" Type="varchar" MaxLength="50" />
+    <Property Name="Musteri_sifresi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Musteri_eposta" Type="nvarchar" MaxLength="50" />
+    <Property Name="Musteri_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yetki" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sepet">
+    <Key>
+      <PropertyRef Name="SPT_ID" />
+    </Key>
+    <Property Name="SPT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STO_ID" Type="int" />
+    <Property Name="MIKTAR" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="BR_FYT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TOPLAM" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MUS_ID" Type="int" />
+    <Property Name="CDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Stok">
+    <Key>
+      <PropertyRef Name="Stokid" />
+    </Key>
+    <Property Name="Stokid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CDate" Type="datetime" />
+    <Property Name="Stokkodu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stokadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Silindimi" Type="int" />
+    <Property Name="Resim" Type="text" />
+    <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="CariModelStoreContainer">
+    <EntitySet Name="card" EntityType="Self.card" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cariler" EntityType="Self.Cariler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sepet" EntityType="Self.Sepet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stok" EntityType="Self.Stok" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

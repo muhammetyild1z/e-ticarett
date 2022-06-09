@@ -1,0 +1,540 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B081868D-4F4E-40D6-9A4D-7CC5E4FD30C3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>projee</RootNamespace>
+    <AssemblyName>projee</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44321</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="a\documentation\assets\css\documenter_style.css" />
+    <Content Include="a\documentation\assets\css\img\info.png" />
+    <Content Include="a\documentation\assets\css\img\warning.png" />
+    <Content Include="a\documentation\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="a\documentation\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="a\documentation\assets\js\jquery.easing.js" />
+    <Content Include="a\documentation\assets\js\jquery.js" />
+    <Content Include="a\documentation\assets\js\jquery.scrollTo.js" />
+    <Content Include="a\documentation\assets\js\script.js" />
+    <Content Include="a\documentation\index.html" />
+    <Content Include="a\eshopper\404.html" />
+    <Content Include="a\eshopper\blog-single.html" />
+    <Content Include="a\eshopper\blog.html" />
+    <Content Include="a\eshopper\cart.html" />
+    <Content Include="a\eshopper\checkout.html" />
+    <Content Include="a\eshopper\contact-us.html" />
+    <Content Include="a\eshopper\css\animate.css" />
+    <Content Include="a\eshopper\css\bootstrap.min.css" />
+    <Content Include="a\eshopper\css\font-awesome.min.css" />
+    <Content Include="a\eshopper\css\main.css" />
+    <Content Include="a\eshopper\css\prettyPhoto.css" />
+    <Content Include="a\eshopper\css\price-range.css" />
+    <Content Include="a\eshopper\css\responsive.css" />
+    <Content Include="a\eshopper\fonts\fontawesome-webfont.svg" />
+    <Content Include="a\eshopper\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="a\eshopper\images\404\404.png" />
+    <Content Include="a\eshopper\images\blog\blog-one.jpg" />
+    <Content Include="a\eshopper\images\blog\blog-three.jpg" />
+    <Content Include="a\eshopper\images\blog\blog-two.jpg" />
+    <Content Include="a\eshopper\images\blog\man-four.jpg" />
+    <Content Include="a\eshopper\images\blog\man-one.jpg" />
+    <Content Include="a\eshopper\images\blog\man-three.jpg" />
+    <Content Include="a\eshopper\images\blog\man-two.jpg" />
+    <Content Include="a\eshopper\images\blog\socials.png" />
+    <Content Include="a\eshopper\images\cart\one.png" />
+    <Content Include="a\eshopper\images\cart\three.png" />
+    <Content Include="a\eshopper\images\cart\two.png" />
+    <Content Include="a\eshopper\images\home\bg_border.png" />
+    <Content Include="a\eshopper\images\home\gallery1.jpg" />
+    <Content Include="a\eshopper\images\home\gallery2.jpg" />
+    <Content Include="a\eshopper\images\home\gallery3.jpg" />
+    <Content Include="a\eshopper\images\home\gallery4.jpg" />
+    <Content Include="a\eshopper\images\home\girl1.jpg" />
+    <Content Include="a\eshopper\images\home\girl2.jpg" />
+    <Content Include="a\eshopper\images\home\girl3.jpg" />
+    <Content Include="a\eshopper\images\home\iframe1.png" />
+    <Content Include="a\eshopper\images\home\iframe2.png" />
+    <Content Include="a\eshopper\images\home\iframe3.png" />
+    <Content Include="a\eshopper\images\home\iframe4.png" />
+    <Content Include="a\eshopper\images\home\logo.png" />
+    <Content Include="a\eshopper\images\home\map.png" />
+    <Content Include="a\eshopper\images\home\new.png" />
+    <Content Include="a\eshopper\images\home\partner1.png" />
+    <Content Include="a\eshopper\images\home\partner2.png" />
+    <Content Include="a\eshopper\images\home\partner3.png" />
+    <Content Include="a\eshopper\images\home\partner4.png" />
+    <Content Include="a\eshopper\images\home\pricing.png" />
+    <Content Include="a\eshopper\images\home\product1.jpg" />
+    <Content Include="a\eshopper\images\home\product2.jpg" />
+    <Content Include="a\eshopper\images\home\product3.jpg" />
+    <Content Include="a\eshopper\images\home\product4.jpg" />
+    <Content Include="a\eshopper\images\home\product5.jpg" />
+    <Content Include="a\eshopper\images\home\product6.jpg" />
+    <Content Include="a\eshopper\images\home\recommend1.jpg" />
+    <Content Include="a\eshopper\images\home\recommend2.jpg" />
+    <Content Include="a\eshopper\images\home\recommend3.jpg" />
+    <Content Include="a\eshopper\images\home\sale.png" />
+    <Content Include="a\eshopper\images\home\searchicon.png" />
+    <Content Include="a\eshopper\images\home\shipping.jpg" />
+    <Content Include="a\eshopper\images\product-details\1.jpg" />
+    <Content Include="a\eshopper\images\product-details\new.jpg" />
+    <Content Include="a\eshopper\images\product-details\rating.png" />
+    <Content Include="a\eshopper\images\product-details\share.png" />
+    <Content Include="a\eshopper\images\product-details\similar1.jpg" />
+    <Content Include="a\eshopper\images\product-details\similar2.jpg" />
+    <Content Include="a\eshopper\images\product-details\similar3.jpg" />
+    <Content Include="a\eshopper\images\shop\advertisement.jpg" />
+    <Content Include="a\eshopper\images\shop\product10.jpg" />
+    <Content Include="a\eshopper\images\shop\product11.jpg" />
+    <Content Include="a\eshopper\images\shop\product12.jpg" />
+    <Content Include="a\eshopper\images\shop\product7.jpg" />
+    <Content Include="a\eshopper\images\shop\product8.jpg" />
+    <Content Include="a\eshopper\images\shop\product9.jpg" />
+    <Content Include="a\eshopper\index.html" />
+    <Content Include="a\eshopper\js\bootstrap.min.js" />
+    <Content Include="a\eshopper\js\contact.js" />
+    <Content Include="a\eshopper\js\gmaps.js" />
+    <Content Include="a\eshopper\js\html5shiv.js" />
+    <Content Include="a\eshopper\js\jquery.js" />
+    <Content Include="a\eshopper\js\jquery.prettyPhoto.js" />
+    <Content Include="a\eshopper\js\jquery.scrollUp.min.js" />
+    <Content Include="a\eshopper\js\main.js" />
+    <Content Include="a\eshopper\js\price-range.js" />
+    <Content Include="a\eshopper\login.html" />
+    <Content Include="a\eshopper\product-details.html" />
+    <Content Include="a\eshopper\sendemail.php" />
+    <Content Include="a\eshopper\shop.html" />
+    <Content Include="Content\Site.css" />
+    <Content Include="edit.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="snipp\about.html" />
+    <Content Include="snipp\blog-single.html" />
+    <Content Include="snipp\blog.html" />
+    <Content Include="snipp\contact.html" />
+    <Content Include="snipp\css\ajax-loader.gif" />
+    <Content Include="snipp\css\animate.css" />
+    <Content Include="snipp\css\aos.css" />
+    <Content Include="snipp\css\bootstrap-datepicker.css" />
+    <Content Include="snipp\css\bootstrap.min.css" />
+    <Content Include="snipp\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="snipp\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="snipp\css\css\bootstrap-reboot.css" />
+    <Content Include="snipp\css\css\mixins\_text-hide.css" />
+    <Content Include="snipp\css\flaticon.css" />
+    <Content Include="snipp\css\icomoon.css" />
+    <Content Include="snipp\css\ionicons.min.css" />
+    <Content Include="snipp\css\jquery.timepicker.css" />
+    <Content Include="snipp\css\magnific-popup.css" />
+    <Content Include="snipp\css\open-iconic-bootstrap.min.css" />
+    <Content Include="snipp\css\owl.carousel.min.css" />
+    <Content Include="snipp\css\owl.theme.default.min.css" />
+    <Content Include="snipp\css\style.css" />
+    <Content Include="snipp\fonts\flaticon\backup.txt" />
+    <Content Include="snipp\fonts\flaticon\font\flaticon.css" />
+    <Content Include="snipp\fonts\flaticon\font\flaticon.html" />
+    <Content Include="snipp\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="snipp\fonts\icomoon\icomoon.svg" />
+    <Content Include="snipp\fonts\ionicons\css\ionicons.min.css" />
+    <Content Include="snipp\fonts\ionicons\fonts\ionicons.svg" />
+    <Content Include="snipp\fonts\open-iconic\open-iconic.svg" />
+    <Content Include="snipp\images\about.jpg" />
+    <Content Include="snipp\images\bg_1.jpg" />
+    <Content Include="snipp\images\bg_2.jpg" />
+    <Content Include="snipp\images\dashboard_full_1.jpg" />
+    <Content Include="snipp\images\dashboard_full_2.jpg" />
+    <Content Include="snipp\images\dashboard_full_3.jpg" />
+    <Content Include="snipp\images\image_1.jpg" />
+    <Content Include="snipp\images\image_2.jpg" />
+    <Content Include="snipp\images\image_3.jpg" />
+    <Content Include="snipp\images\image_4.jpg" />
+    <Content Include="snipp\images\image_5.jpg" />
+    <Content Include="snipp\images\image_6.jpg" />
+    <Content Include="snipp\images\loc.png" />
+    <Content Include="snipp\images\person_1.jpg" />
+    <Content Include="snipp\images\person_2.jpg" />
+    <Content Include="snipp\images\person_3.jpg" />
+    <Content Include="snipp\images\person_4.jpg" />
+    <Content Include="snipp\images\work-1.jpg" />
+    <Content Include="snipp\images\work-2.jpg" />
+    <Content Include="snipp\images\work-3.jpg" />
+    <Content Include="snipp\images\work-4.jpg" />
+    <Content Include="snipp\images\work-5.jpg" />
+    <Content Include="snipp\images\work-6.jpg" />
+    <Content Include="snipp\index.html" />
+    <Content Include="snipp\js\aos.js" />
+    <Content Include="snipp\js\bootstrap-datepicker.js" />
+    <Content Include="snipp\js\bootstrap.min.js" />
+    <Content Include="snipp\js\google-map.js" />
+    <Content Include="snipp\js\jquery-3.2.1.min.js" />
+    <Content Include="snipp\js\jquery-migrate-3.0.1.min.js" />
+    <Content Include="snipp\js\jquery.animateNumber.min.js" />
+    <Content Include="snipp\js\jquery.easing.1.3.js" />
+    <Content Include="snipp\js\jquery.magnific-popup.min.js" />
+    <Content Include="snipp\js\jquery.min.js" />
+    <Content Include="snipp\js\jquery.stellar.min.js" />
+    <Content Include="snipp\js\jquery.waypoints.min.js" />
+    <Content Include="snipp\js\main.js" />
+    <Content Include="snipp\js\owl.carousel.min.js" />
+    <Content Include="snipp\js\particle.js" />
+    <Content Include="snipp\js\particles.min.js" />
+    <Content Include="snipp\js\popper.min.js" />
+    <Content Include="snipp\js\scrollax.min.js" />
+    <Content Include="snipp\portfolio-single.html" />
+    <Content Include="snipp\portfolio.html" />
+    <Content Include="snipp\services.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarilersController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\KullanicilarsController.cs" />
+    <Compile Include="Controllers\SepetController.cs" />
+    <Compile Include="Controllers\StoksController.cs" />
+    <Compile Include="Controllers\UrunlerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\card.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cariler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kullanicilar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Musteri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sepet.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stok.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Security\PersonelRol.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="a\eshopper\fonts\fontawesome-webfont.woff" />
+    <Content Include="a\eshopper\fonts\FontAwesome.otf" />
+    <Content Include="a\eshopper\fonts\glyphicons-halflings-regular.woff" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Carilers\Create.cshtml" />
+    <Content Include="Views\Carilers\Delete.cshtml" />
+    <Content Include="Views\Carilers\Details.cshtml" />
+    <Content Include="Views\Carilers\Edit.cshtml" />
+    <Content Include="Views\Carilers\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Kullanicilars\Create.cshtml" />
+    <Content Include="Views\Kullanicilars\Delete.cshtml" />
+    <Content Include="Views\Kullanicilars\Details.cshtml" />
+    <Content Include="Views\Kullanicilars\Edit.cshtml" />
+    <Content Include="Views\Kullanicilars\Index.cshtml" />
+    <Content Include="Views\Stoks\Delete.cshtml" />
+    <Content Include="Views\Stoks\Details.cshtml" />
+    <Content Include="Views\Stoks\Edit.cshtml" />
+    <Content Include="Views\Stoks\Index.cshtml" />
+    <Content Include="snipp\.DS_Store" />
+    <Content Include="snipp\css\.DS_Store" />
+    <Content Include="snipp\css\bootstrap\.DS_Store" />
+    <Content Include="snipp\css\css\.DS_Store" />
+    <Content Include="snipp\fonts\.DS_Store" />
+    <Content Include="snipp\fonts\flaticon\.DS_Store" />
+    <Content Include="snipp\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="snipp\fonts\flaticon\font\Flaticon.ttf" />
+    <Content Include="snipp\fonts\flaticon\font\Flaticon.woff" />
+    <Content Include="snipp\fonts\flaticon\font\_flaticon.scss" />
+    <Content Include="snipp\fonts\flaticon\license\license.pdf" />
+    <Content Include="snipp\fonts\icomoon\icomoon.eot" />
+    <Content Include="snipp\fonts\icomoon\icomoon.ttf" />
+    <Content Include="snipp\fonts\icomoon\icomoon.woff" />
+    <Content Include="snipp\fonts\ionicons\css\_ionicons.scss" />
+    <Content Include="snipp\fonts\ionicons\fonts\.DS_Store" />
+    <Content Include="snipp\fonts\ionicons\fonts\ionicons.eot" />
+    <Content Include="snipp\fonts\ionicons\fonts\ionicons.ttf" />
+    <Content Include="snipp\fonts\ionicons\fonts\ionicons.woff" />
+    <Content Include="snipp\fonts\ionicons\fonts\ionicons.woff2" />
+    <Content Include="snipp\fonts\open-iconic\open-iconic.eot" />
+    <Content Include="snipp\fonts\open-iconic\open-iconic.otf" />
+    <Content Include="snipp\fonts\open-iconic\open-iconic.ttf" />
+    <Content Include="snipp\fonts\open-iconic\open-iconic.woff" />
+    <Content Include="snipp\images\.DS_Store" />
+    <Content Include="snipp\js\.DS_Store" />
+    <Content Include="snipp\scss\.DS_Store" />
+    <Content Include="snipp\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="snipp\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="snipp\scss\bootstrap\bootstrap.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="snipp\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="snipp\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="snipp\scss\bootstrap\_alert.scss" />
+    <Content Include="snipp\scss\bootstrap\_badge.scss" />
+    <Content Include="snipp\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="snipp\scss\bootstrap\_button-group.scss" />
+    <Content Include="snipp\scss\bootstrap\_buttons.scss" />
+    <Content Include="snipp\scss\bootstrap\_card.scss" />
+    <Content Include="snipp\scss\bootstrap\_carousel.scss" />
+    <Content Include="snipp\scss\bootstrap\_close.scss" />
+    <Content Include="snipp\scss\bootstrap\_code.scss" />
+    <Content Include="snipp\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="snipp\scss\bootstrap\_dropdown.scss" />
+    <Content Include="snipp\scss\bootstrap\_forms.scss" />
+    <Content Include="snipp\scss\bootstrap\_functions.scss" />
+    <Content Include="snipp\scss\bootstrap\_grid.scss" />
+    <Content Include="snipp\scss\bootstrap\_images.scss" />
+    <Content Include="snipp\scss\bootstrap\_input-group.scss" />
+    <Content Include="snipp\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="snipp\scss\bootstrap\_list-group.scss" />
+    <Content Include="snipp\scss\bootstrap\_media.scss" />
+    <Content Include="snipp\scss\bootstrap\_mixins.scss" />
+    <Content Include="snipp\scss\bootstrap\_modal.scss" />
+    <Content Include="snipp\scss\bootstrap\_nav.scss" />
+    <Content Include="snipp\scss\bootstrap\_navbar.scss" />
+    <Content Include="snipp\scss\bootstrap\_pagination.scss" />
+    <Content Include="snipp\scss\bootstrap\_popover.scss" />
+    <Content Include="snipp\scss\bootstrap\_print.scss" />
+    <Content Include="snipp\scss\bootstrap\_progress.scss" />
+    <Content Include="snipp\scss\bootstrap\_reboot.scss" />
+    <Content Include="snipp\scss\bootstrap\_root.scss" />
+    <Content Include="snipp\scss\bootstrap\_tables.scss" />
+    <Content Include="snipp\scss\bootstrap\_tooltip.scss" />
+    <Content Include="snipp\scss\bootstrap\_transitions.scss" />
+    <Content Include="snipp\scss\bootstrap\_type.scss" />
+    <Content Include="snipp\scss\bootstrap\_utilities.scss" />
+    <Content Include="snipp\scss\bootstrap\_variables.scss" />
+    <Content Include="snipp\scss\style.scss" />
+    <Content Include="Views\Kullanicilars\login.cshtml" />
+    <Content Include="Views\Kullanicilars\Register.cshtml" />
+    <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Anasayfa\Index.cshtml" />
+    <Content Include="Views\Home\login1.cshtml" />
+    <Content Include="Views\Kullanici\Index.cshtml" />
+    <Content Include="Views\Stoks\sporgiyim.cshtml" />
+    <Content Include="Views\Stoks\UNDERARMOUR.cshtml" />
+    <Content Include="Views\Home\Anasayfa.cshtml" />
+    <Content Include="Views\Home\sepet.cshtml" />
+    <Content Include="Views\Stoks\Create.cshtml" />
+    <Content Include="Views\Sepet\List.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Urunler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54886</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44321/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
